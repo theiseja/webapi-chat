@@ -15,6 +15,13 @@ server.get('/', (req, res) => {
 });
 
 
+// error handler if invalid url is used
+server.get('*', (req, res) => {
+    res.status(404).send(`
+    <h2>Page not found</h>
+    <p>Please provide a valid URL</p>
+  `)
+});
 
 
 
